@@ -8,8 +8,8 @@ app.get("/all-cards", async (req, res) => {
     res.send(cards);
 });
 
-app.get("/cards/:id", async (req, res) => {
-    const card = await getCard(id);
+app.get("/card/:id", async (req, res) => {
+    const card = await getCard(req.params.id);
     res.send(card);
 });
 
@@ -18,13 +18,13 @@ app.get("/all-boards/", async (req, res) => {
     res.send(boards);
 });
 
-app.get("/get-or-create-bords-by-number/:size", async (req, res) => {
-    const boards = await getOrCreateBoardsByNumber(size);
+app.get("/get-or-create-boards-by-number/:size", async (req, res) => {
+    const boards = await getOrCreateBoardsByNumber(req.params.size);
     res.send(boards);
 });
 
 app.get("/boards-template/:id", async (req, res) => {
-    const boardWithCards = await getBoardWithCards(id);
+    const boardWithCards = await getBoardWithCards(req.params.id);
     res.send(boardWithCards);
 });
 
