@@ -3,6 +3,8 @@ import {getAllBoards, getAllCards, getBoardWithCards, getCard, getOrCreateBoards
 
 const app = express();
 
+app.set('api/v1');
+
 app.get("/all-cards", async (req, res) => {
     const cards = await getAllCards();
     res.send(cards);
@@ -33,6 +35,6 @@ app.use((err, req, res, next) => {
     res.status(500).send("Something broke!")
 });
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000!")
+app.listen(5000, () => {
+    console.log("Server running on port 5000!")
 });

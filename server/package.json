@@ -1,11 +1,13 @@
 {
-  "name": "loteria",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "database.js",
+  "main": "src/database.js",
   "scripts": {
-    "dev": "npx nodemon app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node arc/app.js",
+    "server": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
